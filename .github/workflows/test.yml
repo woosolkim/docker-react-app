@@ -1,4 +1,4 @@
-name: Docker Build Test
+name: Docker Image Ci
 
 on:
   push:
@@ -6,8 +6,9 @@ on:
       - main
 
 jobs:
-  name: Create Environment
-  runs-on: ubuntu-latest
-  steps:
-    - name: Docker Build
-    - run: echo "start Creating an image with dockerfile" && docker build -t woosol/docker-react-app -f Dockerfile.dev . && docker run -e CI=true woosol/docker-react-app npm run test -- --coverage
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Docker Build
+      - run: echo "start Creating an image with dockerfile" && docker build -t woosol/docker-react-app -f Dockerfile.dev . && docker run -e CI=true woosol/docker-react-app npm run test -- --coverage
