@@ -1,0 +1,12 @@
+name: Docker Build Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Docker Build
+    - run: echo "start Creating an image with dockerfile" && docker build -t woosol/docker-react-app -f Dockerfile.dev . && docker run -e CI=true woosol/docker-react-app npm run test -- --coverage
