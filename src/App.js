@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          엄청 느리진 않네요ㅋ
+          learn react
         </a>
       </header>
     </div>
