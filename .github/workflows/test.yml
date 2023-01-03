@@ -1,15 +1,15 @@
-name: Docker Image Ci
+# name: Docker Image Ci
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Docker Build Image
-        run: echo "start Creating an image with dockerfile" && docker build -t woosol/docker-react-app -f Dockerfile.dev . && docker run -e CI=true woosol/docker-react-app npm run test -- --coverage
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Docker Build Image
+#         run: echo "start Creating an image with dockerfile" && docker build -t woosol/docker-react-app -f Dockerfile.dev . && docker run -e CI=true woosol/docker-react-app npm run test -- --coverage
